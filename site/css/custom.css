@@ -1,0 +1,10 @@
+/* your styles go here */
+.text-page p {
+	font-family: "Microsoft Yahei";
+	font-size:17px;
+	font-weight:100;
+}
+
+.heading {
+	color:#0096FF;
+}
