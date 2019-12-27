@@ -23,15 +23,17 @@
     <link rel="shortcut icon" href="img/favicon.png">
     <!-- Leaflet CSS - For the map-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-    <link rel="stylesheet" href="vendor/dist/APlayer.min.css">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
 
   <body>
+    <!-- Player -->
+    <audio  id="player" src="./media/lafille.mp3" preload="meta" loop autoplay id="bgm"> </audio>
+
     <!-- intro -->
-    <section id="intro" style="background-image: url('img/ein-steig.jpg');" class="intro">       
+    <section id="intro" style="background-image: url('img/personal/background.jpeg');" class="intro">       
       <div class="overlay"></div>
       <div class="content">
         <div class="container clearfix">
@@ -40,11 +42,11 @@
               <p class="italic">辩护</p>
               <h1>辩护</h1>
               <p class="italic">洪浩恺&nbsp2019&nbsp年度总结</p>
+              <img src="img/btn/pause.png" width="40" height="40" id="player_btn" onclick="play_pause()"/>
             </div>
           </div>
         </div>
       </div>
-      <audio src="./user_file/test.mp3" preload="meta" loop autoplay id="bgm"></audio>
     </section>
     <!-- intro end-->
 
@@ -53,8 +55,11 @@
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a href="#intro" class="navbar-brand link-scroll">
-            <img src="img/logo.png" alt="" class="img-fluid">
+            <img src="img/btn/logo.png" alt="" class="img-fluid" width="164" height="38" left="30">
           </a>
+          <div>
+            <img src="img/btn/pause.png" width="20" height="20" id="player_btn2" onclick="play_pause()"/>
+          </div>
           <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right">
             <i class="fa fa-bars"></i>
           </button>
@@ -138,7 +143,7 @@
     <!-- thinking page end-->
 
     <!-- reading-->
-    <section id="reading" style="background-color: #eee">
+    <section id="reading" style="background-color: #fff">
       <div class="container">
         <div class="row services">
           <div class="col-lg-12">
@@ -226,8 +231,76 @@
         </div>
       </div>
     </section>
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseBooks">
+            <img src="img/show/show1.png" alt="" class="img-fluid" width="30" height="30" id="show_btn">
+          </a>
+        </div>
+        <div id="collapseBooks" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <div class="col-lg-12">
+              <h3 class="heading">2019 完整读书列表</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <p>
+                    [法] 卢梭，社会契约论或政治权利的原理<br>
+                    [日] 夏目漱石，心<br>
+                    U.S., William Zinsser, On Writing Well<br>
+                    [英] 理查德·道金斯，自私的基因<br>
+                    [日] 是枝裕和，步履不停<br>
+                    [意] 尼科洛·马基雅维里(Machiavelli.N.)，君主论<br>
+                    [法] 小仲马 (Alexandre Dumas Fils)，茶花女<br>
+                    U.K., George Orwell, Animal Farm<br>
+                    [美] 鲁思·本尼迪克特，菊与刀<br>
+                    [美] 大卫·马祖凯里，建筑师<br>
+                    [法] 阿尔贝·加缪，局外人<br>
+                    [美] 艾莉森·麦吉、克里斯托弗·丹尼斯，萤火谷的梦想家<br>
+                    [英] 毛姆，人性的枷锁<br>
+                    [美] 丹尼尔·凯斯，献给阿尔吉侬的花束<br>
+                    [日] 坂本健一，今日店休<br>
+                    [美] 阿图·葛文德，医生的修炼<br>
+                    [英] 伯特兰·罗素，哲学简史<br>
+                    [美] 威尔·杜兰特，哲学的故事<br>
+                    U.S., John Heskett, Design<br>
+                    [美] 苏珊·奈曼 为什么长大<br>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    [美] 苏珊·福沃德 克雷格·巴克，原生家庭<br>
+                    [日] 村上春树，挪威的森林<br>
+                    [中] 沈从文，边城<br>
+                    [中] 胡适，容忍与自由<br>
+                    [瑞] 弗雷德里克·巴克曼，时间的礼物<br>
+                    [德] 弗里德里希·尼采，希腊悲剧时代的哲学<br>
+                    [法] 克里斯多夫·夏布特，灯塔<br>
+                    [日] 小山裕久，日本料理神髓<br>
+                    [意] 卡洛·罗韦利，时间的秩序<br>
+                    [捷] 米兰·昆德拉，不能承受的生命之轻<br>
+                    [英] 路德维希·维特根斯坦，文化与价值<br>
+                    U.S., Khaled Hosseini, The Kite Runner<br>
+                    [英]威尔·贡培兹，现代艺术150年<br>
+                    [日]宫泽贤治，银河铁道之夜<br>
+                    [德]弗里德里希·尼采，偶像的黄昏<br>
+                    [英]史蒂芬·霍金，黑洞不是黑的<br>
+                    [俄]费多尔·陀思妥耶夫斯基，卡拉马佐夫兄弟<br>
+                    [德]弗里德里希·尼采，悲剧的诞生<br>
+                    [日]SATOSHI KON，OPUS<br>
+                    [美]勒·韦勒克 奥斯汀·沃伦，文学理论<br>
+                    [意]卡洛·罗韦利，现实不似你所见
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Reading end-->
-    
+
+
     <!-- Life / gallery-->
     <section id="portfolio" class="gallery">
       <div class="container clearfix">
@@ -235,41 +308,41 @@
           <div class="col-lg-12">
             <div class="row">
               <div class="col-md-12 col-lg-8">
-                <h2 class="heading">Portfolio</h2>
+                <h2 class="heading">portfolio</h2>
                 <p>Put your portfolio or gallery images here for example. Able an hope of body. Any nay shyness article matters own removal nothing his forming. Gay own additions education satisfied the perpetual. If he cause manor happy. Without farther she exposed saw man led. Along on happy could cease green oh. </p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-1.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-1.jpg" alt="image" class="img-fluid"></a></div>
+                <div class="box"><a href="img/gallery/portfolio-1.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-1.jpg" alt="image" class="img-fluid"></a></div>
               </div>
               <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-2.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-2.jpg" alt="image" class="img-fluid"></a></div>
+                <div class="box"><a href="img/gallery/portfolio-2.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-2.jpg" alt="image" class="img-fluid"></a></div>
               </div>
               <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-3.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-3.jpg" alt="image" class="img-fluid"></a></div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-4.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-4.jpg" alt="image" class="img-fluid"></a></div>
-              </div>
-              <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-5.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-5.jpg" alt="image" class="img-fluid"></a></div>
-              </div>
-              <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-6.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-6.jpg" alt="image" class="img-fluid"></a></div>
+                <div class="box"><a href="img/gallery/portfolio-3.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-3.jpg" alt="image" class="img-fluid"></a></div>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-7.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-7.jpg" alt="image" class="img-fluid"></a></div>
+                <div class="box"><a href="img/gallery/portfolio-4.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-4.jpg" alt="image" class="img-fluid"></a></div>
               </div>
               <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-8.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-8.jpg" alt="image" class="img-fluid"></a></div>
+                <div class="box"><a href="img/gallery/portfolio-5.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-5.jpg" alt="image" class="img-fluid"></a></div>
               </div>
               <div class="col-md-4">
-                <div class="box"><a href="img/portfolio-9.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/portfolio-9.jpg" alt="image" class="img-fluid"></a></div>
+                <div class="box"><a href="img/gallery/portfolio-6.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-6.jpg" alt="image" class="img-fluid"></a></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="box"><a href="img/gallery/portfolio-7.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-7.jpg" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-4">
+                <div class="box"><a href="img/gallery/portfolio-8.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-8.jpg" alt="image" class="img-fluid"></a></div>
+              </div>
+              <div class="col-md-4">
+                <div class="box"><a href="img/gallery/portfolio-9.jpg" data-lightbox="image-1" data-title="Some footer information" class="has-border"><img src="img/gallery/portfolio-9.jpg" alt="image" class="img-fluid"></a></div>
               </div>
             </div>
           </div>
@@ -371,9 +444,8 @@
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/lightbox2/js/lightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"> </script>
-    <script src="vendor/dist/APlayer.min.js"></script>
     <script src="js/front.js"></script>
     <script src="js/music.js"></script>
-    <script src="js/popper.js"></script>
+    <script src="js/style.js"></script>
   </body>
 </html>
