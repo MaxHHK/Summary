@@ -33,29 +33,27 @@ $('.popover-dismiss').popover({
 
 // collapse
 $('#collapseBooks').on('show.bs.collapse', function () {
-    var img = document.getElementById('show_btn');
-    var path = 'img/show/show'
-    var index = 0;
-    var interval = setInterval(function() {
-        if (index < 6) {
-            index += 1;
-            img.src = path + index + '.png';
-        } else {
-            clearInterval(interval);
-        }
-    }, 50)
+    var btnUp = document.getElementById('show_btn_up');
+    var btnDown = document.getElementById('show_btn_down');
+    var path = 'img/show/close_'
+    btnUp.src = path + 'up' + '.png';
+    btnDown.src = path + 'down' + '.png';
+        // var img = btnimgs.item(i);
+        // console.log(i)
+        // var interval = setInterval(function() {
+        //     if (index < 6) {
+        //         index += 1;
+        //         img.src = path + index + '.png';
+        //     } else {
+        //         clearInterval(interval);
+        //     }
+        // }, 50)
 })
 
 $('#collapseBooks').on('hide.bs.collapse', function () {
-    var img = document.getElementById('show_btn');
-    var path = 'img/show/show'
-    var index = 6;
-    var interval = setInterval(function() {
-        if (index > 1) {
-            index -= 1;
-            img.src = path + index + '.png';
-        } else {
-            clearInterval(interval);
-        }
-    }, 50)
+    var btnUp = document.getElementById('show_btn_up');
+    var btnDown = document.getElementById('show_btn_down');
+    var path = 'img/show/show_'
+    btnUp.src = path + 'up' + '.png';
+    btnDown.src = path + 'down' + '.png';
 })
