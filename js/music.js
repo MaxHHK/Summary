@@ -24,37 +24,37 @@ function play() {
 }
 
 // multiple way to play automatically
-var is_played = false;
-if (!is_played) {
-    if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
-        play();
-    } else {
-        if (document.addEventListener) {
-            document.addEventListener("WeixinJSBridgeReady", function() {
-                play();
+// var is_played = false;
+// if (!is_played) {
+//     if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+//         play();
+//     } else {
+//         if (document.addEventListener) {
+//             document.addEventListener("WeixinJSBridgeReady", function() {
+//                 play();
                 
-            }, false);
-        } else if (document.attachEvent) {
-            document.attachEvent("WeixinJSBridgeReady", function() {
-                play();
-            });
-            document.attachEvent("onWeixinJSBridgeReady", function() {
-                play();
-            });
-        }
-    }
-}
+//             }, false);
+//         } else if (document.attachEvent) {
+//             document.attachEvent("WeixinJSBridgeReady", function() {
+//                 play();
+//             });
+//             document.attachEvent("onWeixinJSBridgeReady", function() {
+//                 play();
+//             });
+//         }
+//     }
+// }
 
-document.addEventListener("touchstart", function(e) {
-    if (!is_played) {
-        play();
-    }
-}, false);
+// document.addEventListener("touchstart", function(e) {
+//     if (!is_played) {
+//         play();
+//     }
+// }, false);
 
-window.onscroll = function() {
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    console.log("滚动距离" + scrollTop);
-    if (!is_played && scrollTop > 5) {
-        play();
-    }
-}
+// window.onscroll = function() {
+//     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//     console.log("滚动距离" + scrollTop);
+//     if (!is_played && scrollTop > 5) {
+//         play();
+//     }
+// }
